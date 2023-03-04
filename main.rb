@@ -1,11 +1,10 @@
-# API_KEY = AIzaSyADgYOqBNSV0i-gkJ4sP8dG0qLhOu0snVY
 require 'rubygems'
 require 'google/apis'
 require 'google/apis/youtube_v3'
 require 'json'
 
 @service = Google::Apis::YoutubeV3::YouTubeService.new()
-@service.key = 'AIzaSyADgYOqBNSV0i-gkJ4sP8dG0qLhOu0snVY'
+@service.key = YOUR_API_KEY
 
 def search_channels(query)
   @service.list_searches('snippet', q: query, type: 'channel').items.each do |item|
